@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6B8AF"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/castoro_titling"
+        android:gravity="center"
+        android:text="@string/according_to_our_calculations"
+        android:textColor="#000000"
+        android:textSize="40sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/castoro_titling"
+        android:gravity="center"
+        android:text="@string/your_average_cycle_length_is"
+        android:textColor="#000000"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/averageCycleLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_24_days"
+        android:fontFamily="@font/castoro_titling"
+        android:gravity="center"
+        android:textColor="#5B0F00"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+</LinearLayout>

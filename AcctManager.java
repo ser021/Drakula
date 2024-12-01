@@ -1,19 +1,19 @@
-package Codes;
+package com.example.drakulaapp;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
-
 public class AcctManager {
-	private UserManager userMng;
-	private Scanner scanner;
-	
-	public AcctManager(UserManager userMng) {
-		this.userMng = userMng;
-		this.scanner = new Scanner(System.in);
-	}
-	
-	public UserAcct createAccount() {
+
+    private UserManager userMng;
+    private Scanner scanner;
+
+    public AcctManager(UserManager userMng) {
+        this.userMng = userMng;
+        this.scanner = new Scanner(System.in);
+    }
+
+    public UserAcct createAccount() {
         System.out.println("\nLet's create an account for you");
 
         System.out.print("\nPlease enter your name: ");
@@ -42,9 +42,9 @@ public class AcctManager {
             weight = scanner.nextInt();
             scanner.nextLine();
 
-            System.out.println("\nYour birth date is " + birthDate + 
-                ", \nYou are " + feet + " feet and " + inches + " inches tall \nAnd weigh " + weight + 
-                ". \nDoes this information look correct?");
+            System.out.println("\nYour birth date is " + birthDate +
+                    ", \nYou are " + feet + " feet and " + inches + " inches tall \nAnd weigh " + weight +
+                    ". \nDoes this information look correct?");
             System.out.print("Enter 'yes' or 'no': ");
             userInput = scanner.nextLine().trim().toLowerCase();
 
@@ -53,6 +53,5 @@ public class AcctManager {
         System.out.println("\nWelcome to Drakula " + name + "! \nYour account has been created");
         return userMng.createUser(name, birthDate, feet, inches, weight);
     }
-
 
 }

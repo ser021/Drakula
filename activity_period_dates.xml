@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6B8AF"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:ignore="VisualLintBounds">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/castoro_titling"
+        android:gravity="center"
+        android:text="@string/pick_a_start_date"
+        android:textColor="#5B0F00"
+        android:textColorLink="#000000"
+        android:textSize="48sp" />
+
+    <CalendarView
+        android:id="@+id/calendarViewStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:selectedWeekBackgroundColor="#980000"
+        android:weekNumberColor="#980000" />
+
+    <Button
+        android:id="@+id/btnSaveStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/save"
+        app:backgroundTint="#980000"
+        tools:ignore="VisualLintButtonSize" />
+</LinearLayout>

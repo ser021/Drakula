@@ -1,14 +1,25 @@
-package Codes;
-
+package com.example.drakulaapp;
 import java.time.LocalDate;
+import java.io.Serializable;
 
-public class UserAcct {
-	
-	private String name;
+public class UserAcct implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private String name;
     private LocalDate birthDate;
     private int heightFeet;
     private int heightInches;
     private int weight;
+
+    private transient PeriodTracker tracker;
+
+    public PeriodTracker getTracker() {
+        if (tracker == null) {
+            tracker = new PTImpl();
+        }
+        return tracker;
+    }
 
     public UserAcct(String name, LocalDate birthDate, int heightFeet, int heightInches, int weight) {
         this.name = name;
@@ -40,8 +51,8 @@ public class UserAcct {
 
     @Override
     public String toString() {
-        return "User{name='" + name + "', birthDate=" + birthDate + 
-               ", height=" + heightFeet + "ft " + heightInches + "in, weight=" + weight + " lbs}";
+        return "User{name='" + name + "', birthDate=" + birthDate +
+                ", height=" + heightFeet + "ft " + heightInches + "in, weight=" + weight + " lbs}";
     }
 
 }

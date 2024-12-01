@@ -1,0 +1,63 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6B8AF"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="125dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/castoro_titling"
+            android:gravity="center"
+            android:text="@string/symptoms_and_mood"
+            android:textColor="#5B0F00"
+            android:textSize="48sp" />
+
+        <CheckBox
+            android:id="@+id/chkCramps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cramps"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkHeadache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/headache"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkMoodSwings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mood_swings"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/chkOtherSympt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/other_symptoms"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnSaveSymptoms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:text="@string/save"
+            android:textSize="18sp"
+            app:backgroundTint="#980000"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+</ScrollView>
