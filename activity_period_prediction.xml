@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6B8AF"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/castoro_titling"
+        android:gravity="center"
+        android:textColor="#5B0F00"
+        android:text="@string/period_prediction"
+        android:textSize="48sp" />
+
+    <CalendarView
+        android:id="@+id/calendarPeriodPrediction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

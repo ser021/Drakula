@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6B8AF"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="-10dp"
+        android:textColor="#5B0F00"
+        android:fontFamily="@font/castoro_titling"
+        android:gravity="center"
+        android:text="@string/period_history"
+        android:textSize="30sp" />
+
+    <ListView
+        android:id="@+id/listPeriodHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
