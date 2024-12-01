@@ -1,48 +1,53 @@
-package Codes;
+package com.example.drakulaapp;
 
-import java.util.Scanner;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainApp {
+import androidx.appcompat.app.AppCompatActivity;
 
-	public static void main(String[] args) {
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		UserManager userMng = new UserMngImpl();
-		AcctManager acctManager = new AcctManager(userMng);
-		
-		System.out.println("Welcome to Drakula");
-		System.out.print("Do you have an account? (yes/no): ");
-		String ans = scanner.next();
-		if(ans.equalsIgnoreCase("yes")) {
-			System.out.print("Please enter your name: ");
-			String name = scanner.next();
-			
-			if(userMng.userExists(name)) {
-				UserAcct user = userMng.getUser(name);
-				System.out.println("Welcome back, " + user.getName() + "!");
-			}
-			else {
-				System.out.println("User not found. Please create an account...");
-				UserAcct user = acctManager.createAccount();
-				System.out.println(user);
-			}
-		}
-		else if(ans.equalsIgnoreCase("no")){
-			//AcctManager acctManager = new AcctManager();
-			acctManager.createAccount();
-		}
-		else {
-			System.out.println("Sorry, I don't know what you mean.\nPlease type 'yes' or 'no': ");
-		}
-		
-		PeriodTracker tracker = new PTImpl();
-		User ui = new Console(tracker);
-		
-		ui.displayMenu();
-		
-		scanner.close();
+public class MainApp extends AppCompatActivity {
 
-	}
+    private UserManager userMng;
+    private Button loginButton, createButton;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        userMng = new UserMngImpl();
+
+        TextView textView = findViewById(R.id.welcomeTextView);
+        textView.setText("Welcome to");
+        TextView textView2 = findViewById(R.id.drakulaTextView);
+        textView2.setText("Drakula");
+        loginButton = findViewById(R.id.loginButton);
+        createButton = findViewById(R.id.createButton);
+
+        loginButton.setOnClickListener(view -> {
+            String name = nameEditText.getText().toString().trim();
+            if (userMng.userExists(name)) {
+                UserAcct user = userMng.getUser(name);
+                Intent intent = new Intent(MainActivity.this, PeriodTrackingActivity.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
+            } else {
+                Toast.makeText(MainActivity.this, "User not found", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        createButton.setOnClickListener(view -> {
+            String name = nameEditText.getText().toString().trim();
+            if (!name.isEmpty()) {
+                Intent intent = new Intent(MainActivity.this, AccountCreationActivity.class);
+                intent.putExtra("userName", name);
+                startActivity(intent);
+            } else {
+                Toast.makeText(MainActivity.this, "Please enter your name", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
